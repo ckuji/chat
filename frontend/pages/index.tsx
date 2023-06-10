@@ -1,7 +1,55 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
+import axios from 'axios'
+import { headers } from 'next/dist/client/components/headers'
 
 export default function Home() {
+    
+    // create user
+    // useEffect(() => {
+    //     const createUserFunction = async () => {
+    //         const createData = await axios.post("http://localhost:5000/user", {
+    //             nickname: "", password: "", email: ""
+    //         })
+    //         console.log('createData is ...', createData)
+    //     }
+    //     // createUserFunction()
+    // }, [])
+
+    // fetch all users
+    // useEffect(() => {
+    //     const getAllUserFunction = async () => {
+    //         const fetchData = await axios.get("http://localhost:5000/user")
+    //         console.log('fetchData.data is ...', fetchData.data)
+    //     }
+    //     getAllUserFunction()
+    // }, [])
+
+    // sign in
+    useEffect(() => {
+        const signInFunction = async () => {
+            const signInData = await axios.post("http://localhost:5000/auth/login", {
+                username: "", password: ""
+            })
+            console.log('signInData is ...', signInData.data)
+        }
+        // signInFunction()
+    }, [])
+
+    // profile
+    useEffect(() => {
+        const getProfyleFunction = async () => {
+            const getProfileData = await axios.get("http://localhost:5000/auth/profile", {
+                headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidGhpcmROYW1lIiwiaWF0IjoxNjg2Mzk0NTU5LCJleHAiOjE2ODY0ODA5NTl9.Wan5yyTREILC6WNJUki0Bp3mrV_QrMpXl9qtZZTuFPw"
+                }
+            })
+            console.log('signInData is ...', getProfileData.data)
+        }
+        // getProfyleFunction()
+    }, [])
+
     return (
         <>
             <Head>
