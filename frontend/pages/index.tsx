@@ -26,29 +26,29 @@ export default function Home() {
     //     getAllUserFunction()
     // }, [])
 
-    // sign in
-    useEffect(() => {
-        const signInFunction = async () => {
-            const signInData = await axios.post("http://localhost:5000/auth/login", {
-                username: "", password: ""
-            })
-            console.log('signInData is ...', signInData.data)
-        }
-        // signInFunction()
-    }, [])
+    // // sign in
+    // useEffect(() => {
+    //     const signInFunction = async () => {
+    //         const signInData = await axios.post("http://localhost:5000/auth/login", {
+    //             username: "", password: ""
+    //         })
+    //         console.log('signInData is ...', signInData.data)
+    //     }
+    //     // signInFunction()
+    // }, [])
 
-    // profile
-    useEffect(() => {
-        const getProfyleFunction = async () => {
-            const getProfileData = await axios.get("http://localhost:5000/auth/profile", {
-                headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidGhpcmROYW1lIiwiaWF0IjoxNjg2Mzk0NTU5LCJleHAiOjE2ODY0ODA5NTl9.Wan5yyTREILC6WNJUki0Bp3mrV_QrMpXl9qtZZTuFPw"
-                }
-            })
-            console.log('signInData is ...', getProfileData.data)
-        }
-        // getProfyleFunction()
-    }, [])
+    // // profile
+    // useEffect(() => {
+    //     const getProfyleFunction = async () => {
+    //         const getProfileData = await axios.get("http://localhost:5000/auth/profile", {
+    //             headers: {
+    //                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidGhpcmROYW1lIiwiaWF0IjoxNjg2Mzk0NTU5LCJleHAiOjE2ODY0ODA5NTl9.Wan5yyTREILC6WNJUki0Bp3mrV_QrMpXl9qtZZTuFPw"
+    //             }
+    //         })
+    //         console.log('signInData is ...', getProfileData.data)
+    //     }
+    //     // getProfyleFunction()
+    // }, [])
 
     return (
         <>
