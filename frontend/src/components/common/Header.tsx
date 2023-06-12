@@ -4,16 +4,17 @@ import AuthModal from "./modals/AuthModal";
 const Header: React.FC = () => {
     const [domLoaded, setDomLoaded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(true);
+
     const showModal = () => {
         setIsModalOpen(true);
     };
     const handleCancel = () => {
         setIsModalOpen(false);
     };
-
+    
     useEffect(() => {
         setDomLoaded(true);
-      }, []);
+    }, []);
 
     if(!domLoaded) {
         return (
@@ -29,7 +30,10 @@ const Header: React.FC = () => {
                 {/* <div>Выйти &larr;</div> */}
             </div>
 
-            <AuthModal isModalOpen={isModalOpen} handleCancel={handleCancel}  />
+            <AuthModal
+                isModalOpen={isModalOpen}
+                handleCancel={handleCancel}
+            />
 
         </div>
     )
